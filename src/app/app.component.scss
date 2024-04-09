@@ -1,0 +1,26 @@
+.main {
+    position: relative;
+    height: 100vh;
+    background-color: grey;
+
+    app-block {
+        position: absolute;
+    }
+
+    :nth-child(1) {
+        left: 0;
+        top: 5px;
+    }
+    :nth-child(2) {
+        right: 0;
+        top: 5px;
+    }
+    :nth-child(3) {
+        left: 0;
+        bottom: 0;
+    }
+    :nth-child(4) {
+        right: 0;
+        bottom: 0;
+    }
+}
