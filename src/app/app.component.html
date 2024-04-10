@@ -1,14 +1,19 @@
-<div class="main">
-  <ul @if(isGuestListDisplayed)>
+<main class="main">
+  <h1 [ngClass]="{'important': isAdmin}">Bonjour !</h1>
+  <button>View</button>
+  <button (click)="ToggleIsAdmin()">{{isAdmin ? 'remove admin status':'add admin status' }}</button>
+  @if(isAdmin){<button>Edit</button>}
+
+  <!-- <ul @if(isGuestListDisplayed)>
     @if(iiIngredientNecessary){<li>Pommes de terre</li>}
-
+    
     <li [ngStyle]="{backgroundColor:isThisIngredientVital ? 'red' : 'yellow'}">Raclette</li>
-
+    
     <li>Jambon</li>
-
+    
     <li [ngClass]="{ 'vital': isThisIngredientVital }">Cornichons</li>
-
+    
     <li>Chou-fleur</li>
-  </ul>
-</div>
+  </ul> -->
+</main>
 <router-outlet></router-outlet>

@@ -11,4 +11,11 @@ export class AppComponent {
   isThisIngredientVital: boolean = true
   isGuestListDisplayed: boolean = false;
   iiIngredientNecessary: boolean = true;
+
+  ///////////////////// QUEST /////////////////////////
+  isAdmin: boolean = false;
+
+  ToggleIsAdmin() {
+    this.isAdmin = !this.isAdmin
+  }
 }
