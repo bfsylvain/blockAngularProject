@@ -1,8 +1,14 @@
 <div class="main">
-  <app-user-profile></app-user-profile>
-  <!-- <app-block></app-block>
-  <app-block></app-block>
-  <app-block></app-block>
-  <app-block></app-block> -->
+  <ul @if(isGuestListDisplayed)>
+    @if(iiIngredientNecessary){<li>Pommes de terre</li>}
+
+    <li [ngStyle]="{backgroundColor:isThisIngredientVital ? 'red' : 'yellow'}">Raclette</li>
+
+    <li>Jambon</li>
+
+    <li [ngClass]="{ 'vital': isThisIngredientVital }">Cornichons</li>
+
+    <li>Chou-fleur</li>
+  </ul>
 </div>
 <router-outlet></router-outlet>
