@@ -1,0 +1,19 @@
+<div class="user-card">
+  <img [src]="photo" [alt]="name + ' ' + firstName" />
+  <header>
+    <h3>Nom: {{ name }}</h3>
+    <h3>Prénom: {{ firstName }}</h3>
+  </header>
+  <main>
+    <div class="quoteArea">
+      <p>{{ quote }}</p>
+    </div>
+      @if (displayAge) {
+      <p>{{ age }} ans</p>
+      }
+  </main>
+  <footer>
+    <input id="name" [(ngModel)]="quote" placeholder="votre citation" />
+    <button (click)="showUserAge()">Afficher/masquer mon âge</button>
+  </footer>
+</div>

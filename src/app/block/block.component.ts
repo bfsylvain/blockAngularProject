@@ -3,8 +3,8 @@ import { Component } from '@angular/core';
 @Component({
   selector: 'app-block',
   templateUrl: './block.component.html',
-  styleUrl: './block.component.scss'
+  styleUrl: './block.component.scss',
 })
 export class BlockComponent {
-  innerText: string = "a b c"
+  innerText: string = 'a b c';
 }
