@@ -8,9 +8,9 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title: string = 'Raclette party 🧀';
 
-  isThisIngredientVital: boolean = true
-  isGuestListDisplayed: boolean = false;
-  iiIngredientNecessary: boolean = true;
+  isThisIngredientVital: boolean = false
+  isGuestListDisplayed: boolean = true;
+  IngredientNecessary: boolean = true;
 
   ///////////////////// QUEST /////////////////////////
   isAdmin: boolean = false;

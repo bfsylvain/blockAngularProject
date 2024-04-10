@@ -2,14 +2,18 @@
     position: relative;
     height: 100vh;
 
-    // .vital {
-    //     color: red;
-    //     font-weight: bold;
-    // }
+    .vital {
+        color: red;
+        font-weight: bold;
+    }
 
     /////////// QUEST /////////////////////////
     .important {
         color: red;
         font-weight: bold;
+    }
+
+    .bold {
+        font-weight: bolder;
     }
 }
