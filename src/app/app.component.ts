@@ -6,13 +6,8 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title: string = 'Raclette party 🧀';
 
-  isThisIngredientVital: boolean = true
-  isGuestListDisplayed: boolean = false;
-  iiIngredientNecessary: boolean = true;
 
-  ///////////////////// QUEST /////////////////////////
   isAdmin: boolean = false;
 
   ToggleIsAdmin() {

@@ -4,16 +4,5 @@
   <button (click)="ToggleIsAdmin()">{{isAdmin ? 'remove admin status':'add admin status' }}</button>
   @if(isAdmin){<button>Edit</button>}
 
-  <!-- <ul @if(isGuestListDisplayed)>
-    @if(iiIngredientNecessary){<li>Pommes de terre</li>}
-    
-    <li [ngStyle]="{backgroundColor:isThisIngredientVital ? 'red' : 'yellow'}">Raclette</li>
-    
-    <li>Jambon</li>
-    
-    <li [ngClass]="{ 'vital': isThisIngredientVital }">Cornichons</li>
-    
-    <li>Chou-fleur</li>
-  </ul> -->
 </main>
 <router-outlet></router-outlet>
