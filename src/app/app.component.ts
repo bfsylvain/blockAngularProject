@@ -14,7 +14,7 @@ export class AppComponent {
 
   ///////////////////// QUEST /////////////////////////
   isAdmin: boolean = false;
-
+  playlist: string[] = ["Alejandro", "Ne me quitte pas", "Le temps est bon"];
   ToggleIsAdmin() {
     this.isAdmin = !this.isAdmin
   }
