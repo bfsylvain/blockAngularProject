@@ -1,0 +1,15 @@
+h1 {
+    text-align: center;
+}
+a {
+    text-decoration: none;
+}
+nav {
+    display: flex;
+    justify-content: center;
+    gap: 5px;
+
+    button {
+        padding: 1em 2em;
+    }
+}

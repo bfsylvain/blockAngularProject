@@ -1,17 +1,27 @@
-.user-card {
-    width: 350px;
-    border: 1px black solid;
+    #component-body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 2em;
+        .user-card {
+            display: flex;
+            flex-direction: column;
+            width: 350px;
+            border: 1px black solid;
+        
+            input, button {
+                width: 200px;
+                padding: 0;
+            }
+            .ageArea, .quoteArea {
+                height: 30px;
+            }
+        
+            footer {
+                padding: 1rem 0;
+                background-color: lightgray;
+            }
+        }
+    
+    }
 
-    input, button {
-        width: 200px;
-        padding: 0;
-    }
-    .ageArea, .quoteArea {
-        height: 30px;
-    }
-
-    footer {
-        padding: 1rem 0;
-        background-color: lightgray;
-    }
-}
