@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Form } from '../models/types/form.type';
 
 @Component({
@@ -6,7 +6,7 @@ import { Form } from '../models/types/form.type';
   templateUrl: './sign-up.component.html',
   styleUrl: './sign-up.component.scss',
 })
-export class SignUpComponent {
+export class SignUpComponent implements OnInit {
 
   signUpForm: Form = {
   firstName: '',
