@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Form } from '../models/types/form.type';
 
 @Component({
   selector: 'app-sign-up',
