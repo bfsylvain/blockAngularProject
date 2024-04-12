@@ -1,0 +1,65 @@
+<p>sign-up works!</p>
+<form #myForm="ngForm" (ngSubmit)="onSubmit()">
+
+    <div class="error-message">
+    @if(myForm.submitted){
+        @if(email.errors?.['required']){<span>l'email est requis</span>}
+        @if(email.errors?.['email']){<span>l'email est incorrect</span>}
+    }
+    </div>
+    <fieldset>
+        <label for="email">Email : </label>
+    <input
+      email
+      #email="ngModel"
+      [(ngModel)]="signUpForm.email"
+      id="email"
+      name="email"
+      type="text"
+      required
+    />
+</fieldset>
+<div class="error-message">
+@if(myForm.submitted){
+    @if(firstName.errors?.['required']){<span>le prénom est requis</span>}
+    @if(firstName.errors?.['minlength']){<span>le prénom {{minLengthErrorSentence}}</span>}    
+    @if(firstName.errors?.['maxlength']){<span>le prénom {{maxLengthErrorSentence}}</span>}
+}
+</div>
+<fieldset>
+    <label for="firstName">Firstname : </label>
+    <input
+      #firstName="ngModel"
+      [(ngModel)]="signUpForm.firstName"
+      id="firstName"
+      name="firstName"
+      type="text"
+      required
+      minlength="2"
+      maxlength="15"
+    />
+</fieldset>
+<div class="error-message">
+@if(myForm.submitted){
+    @if(lastName.errors?.['required']){<span>le nom de famille est requis</span>}
+    @if(lastName.errors?.['minlength']){<span>le nom de famille {{minLengthErrorSentence}}</span>}
+    @if(lastName.errors?.['maxlength']){<span>le nom de famille {{maxLengthErrorSentence}}</span>}    
+}
+</div>
+  <fieldset>
+    <label for="lastName">Lastname : </label>
+    <input
+      #lastName="ngModel"
+      [(ngModel)]="signUpForm.lastName"
+      id="lastName"
+      name="lastName"
+      type="text"
+      required
+      minlength="2"
+      maxlength="15"
+    />
+  </fieldset>
+
+  <button type="reset">RESET</button>
+  <button type="submit">SUBMIT</button>
+</form>
