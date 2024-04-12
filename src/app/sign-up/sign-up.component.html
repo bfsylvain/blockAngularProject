@@ -1,9 +1,5 @@
 <form #myForm="ngForm" (ngSubmit)="onSubmit()">
 
-    <!-- <div class="error-message" [hidden]="!myForm.submitted">
-        @if(email.errors?.['required']){<span>l'email est requis</span>}
-        @if(email.errors?.['email']){<span>l'email est incorrect</span>}
-    </div> -->
     <div class="error-message">
     @if(myForm.submitted){
         @if(email.errors?.['required']){<span>l'email est requis</span>}
@@ -25,8 +21,8 @@
 <div class="error-message">
 @if(myForm.submitted){
     @if(firstName.errors?.['required']){<span>le prénom est requis</span>}
-    @if(firstName.errors?.['minlength']){<span>le prénom doit faire minimum 3 caractères</span>}    
-    @if(firstName.errors?.['maxlength']){<span>le prénom doit faire maximum 15 caractères</span>}
+    @if(firstName.errors?.['minlength']){<span>le prénom {{minLengthErrorSentence}}</span>}    
+    @if(firstName.errors?.['maxlength']){<span>le prénom {{maxLengthErrorSentence}}</span>}
 }
 </div>
 <fieldset>

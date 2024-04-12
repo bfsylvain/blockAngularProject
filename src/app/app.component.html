@@ -1,25 +1,5 @@
 <main class="main">
-  <h1 [ngClass]="{'important': isAdmin}">Bonjour !</h1>
-  <button>View</button>
-  <button (click)="ToggleIsAdmin()">{{isAdmin ? 'remove admin status':'add admin status' }}</button>
-  @if(isAdmin){<button>Edit</button>}
 
-  <ul *ngIf="isGuestListDisplayed">
-    @if(IngredientNecessary){<li>Pommes de terre</li>}
-    <li [ngStyle]="{backgroundColor:isThisIngredientVital ? 'red' : 'yellow'}">Raclette</li>
-    <li>Jambon</li>
-    <li class="bold" [ngClass]="{ 'vital': isThisIngredientVital }">Cornichons</li>
-    <li>Chou-fleur</li>
-  </ul>
-
-  <ul class="songList">
-    <li *ngFor="let song of playlist; let songNumber=index">{{songNumber + 1}}.{{song}}</li>
-  </ul>
-
-  <ul>
-    <li *ngFor="let _ of [].constructor(20); let catNumber=index"> Cat number {{ catNumber + 1 }} 🐱</li>
-  </ul>
   <app-sign-up></app-sign-up>
-  <app-my-form></app-my-form>
 </main>
 <router-outlet></router-outlet>
