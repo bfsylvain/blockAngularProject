@@ -1,0 +1,37 @@
+<form #myForm="ngForm" (ngSubmit)="myForm.valid && onSubmit()">
+    <div>
+        Form submitted ? {{myForm.submitted}}
+        Form valid ? {{myForm.valid}}
+        Form invalid ? {{myForm.invalid}}
+    </div>
+    <fieldset>
+        <label for="title-order">TITLE</label>
+        <input id="title-order" name="title-order" #title="ngModel" [(ngModel)]="newOrder.title" type="text" required minlength="5" maxlength="25">
+    </fieldset>
+
+        @if("title.errors"){
+            @if(title.errors?.['required']){<span>Un titre est requis</span>}
+            @if(title.errors?.['minlength']){<span>Le titre doit faire au moins 5 caracteres</span>}
+            @if(title.errors?.['maxlength']){<span>Le titre doit faire au maximum 25 caracteres</span>}
+        }
+
+
+    <fieldset>
+        <label for="quantity-order">QUANTITY</label>
+        <input id="quantity-order" name="quantity-order" [(ngModel)]="newOrder.quantity" type="text">
+    </fieldset>
+
+    <fieldset>
+        <label for="date-order">DATE</label>
+        <input id="date-order" name="date-order" [(ngModel)]="newOrder.date" type="text">
+    </fieldset>
+
+    <fieldset>
+        <label for="contact-order">CONTACT</label>
+        <input id="contact-order" name="contact-order" [(ngModel)]="newOrder.contact" type="text">
+    </fieldset>
+
+    <button type="reset">RESET</button>
+    <button type="submit">SUBMIT</button>
+
+</form>

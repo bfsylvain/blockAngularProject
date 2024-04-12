@@ -6,12 +6,16 @@ import { AppComponent } from './app.component';
 import { BlockComponent } from './block/block.component';
 import { FormsModule } from '@angular/forms';
 import { UserProfileComponent } from './user-profile/user-profile.component';
+import { MyFormComponent } from './my-form/my-form.component';
+import { SignUpComponent } from './sign-up/sign-up.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     BlockComponent,
     UserProfileComponent,
+    MyFormComponent,
+    SignUpComponent,
   ],
   imports: [
     BrowserModule,
