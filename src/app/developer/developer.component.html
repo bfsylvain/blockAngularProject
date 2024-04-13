@@ -1,0 +1,13 @@
+<div class="dev-exercise">
+    <div class="dev-card">
+        <h2>{{developer1.firstName | uppercase}} {{developer1.lastName | uppercase}}</h2>
+        <h3>age</h3>
+        <p>{{developer1.age}}</p>
+        <h3>Genre</h3>
+        <p>{{developer1.gender}}</p>
+        <h3>Biographie</h3>
+        <p>{{developer1.bio}}</p>
+        <h3>Compétences</h3>
+        <app-skills [developer1SkillList]="developer1SkillList"></app-skills>
+    </div>
+</div>

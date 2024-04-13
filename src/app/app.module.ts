@@ -7,6 +7,8 @@ import { BlockComponent } from './block/block.component';
 import { FormsModule } from '@angular/forms';
 import { UserProfileComponent } from './user-profile/user-profile.component';
 import { SignUpComponent } from './sign-up/sign-up.component';
+import { DeveloperComponent } from './developer/developer.component';
+import { SkillsComponent } from './skills/skills.component';
 
 @NgModule({
   declarations: [
@@ -14,6 +16,8 @@ import { SignUpComponent } from './sign-up/sign-up.component';
     BlockComponent,
     UserProfileComponent,
     SignUpComponent,
+    DeveloperComponent,
+    SkillsComponent,
   ],
   imports: [
     BrowserModule,

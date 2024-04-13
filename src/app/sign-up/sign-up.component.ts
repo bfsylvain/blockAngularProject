@@ -21,7 +21,7 @@ export class SignUpComponent implements OnInit {
     ngOnInit(){
       this.generateLengthErrorMessages(this.minLengthWord, this.maxLengthWord)
     }
-    generateLengthErrorMessages(minLength: number, maxLength: number) {
+    generateLengthErrorMessages(minLength: number, maxLength: number): void {
       this.minLengthErrorSentence = `doit faire ${minLength} caractères minimum`
       this.maxLengthErrorSentence = `doit faire ${maxLength} caractères maximum`
     }
