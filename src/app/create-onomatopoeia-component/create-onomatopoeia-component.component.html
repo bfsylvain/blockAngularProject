@@ -1,4 +1,9 @@
-<form #onomaForm = "ngForm" (ngSubmit)="createOnomatopeia()">
+<form #onomaForm="ngForm" (ngSubmit)="!onomato.errors && createOnomatopeia()">
+    <div class="error-message">
+        @if(onomaForm.submitted) {
+            @if(onomato.errors?.['required']){<span>une onomatopée est nécessaire</span>}
+        }
+    </div>
     <fieldset>
         <label for="word">Onomatopée : </label>
         <input #onomato="ngModel" [(ngModel)]="newOnomatopoeia" type="text" name="word" id="word">
