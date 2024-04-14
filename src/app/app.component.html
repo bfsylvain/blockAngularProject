@@ -19,6 +19,14 @@
   <ul>
     <li *ngFor="let _ of [].constructor(20); let catNumber=index"> Cat number {{ catNumber + 1 }} 🐱</li>
   </ul>
+  <p>Onomato list :</p>
+  <ul>
+    <li *ngFor="let onomato of onOnomatopeiaList">{{ onomato }}</li>
+  </ul>
+  <app-create-onomatopoeia-component
+    (sendOnomatopoeiaToParent)="onReceiveNewOnomatopeia($event)"
+  ></app-create-onomatopoeia-component>
+
   <app-sign-up></app-sign-up>
   <app-developer></app-developer>
 </main>
