@@ -9,6 +9,7 @@ import { UserProfileComponent } from './user-profile/user-profile.component';
 import { SignUpComponent } from './sign-up/sign-up.component';
 import { DeveloperComponent } from './developer/developer.component';
 import { SkillsComponent } from './skills/skills.component';
+import { CreateOnomatopoeiaComponentComponent } from './create-onomatopoeia-component/create-onomatopoeia-component.component';
 
 @NgModule({
   declarations: [
@@ -18,6 +19,7 @@ import { SkillsComponent } from './skills/skills.component';
     SignUpComponent,
     DeveloperComponent,
     SkillsComponent,
+    CreateOnomatopoeiaComponentComponent,
   ],
   imports: [
     BrowserModule,

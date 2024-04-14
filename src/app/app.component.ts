@@ -6,16 +6,11 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title: string = 'Raclette party 🧀';
+  onOnomatopeiaList: string[]= [];
 
-  isThisIngredientVital: boolean = false
-  isGuestListDisplayed: boolean = true;
-  IngredientNecessary: boolean = true;
-
-  ///////////////////// QUEST /////////////////////////
-  isAdmin: boolean = false;
-  playlist: string[] = ["Alejandro", "Ne me quitte pas", "Le temps est bon"];
-  ToggleIsAdmin() {
-    this.isAdmin = !this.isAdmin
+  onReceiveNewOnomatopeia(event: string): void {
+    this.onOnomatopeiaList.push(event)
+    console.log(event)
   }
+
 }

@@ -1,0 +1,7 @@
+<form #onomaForm = "ngForm" (ngSubmit)="createOnomatopeia()">
+    <fieldset>
+        <label for="word">Onomatopée : </label>
+        <input #onomato="ngModel" [(ngModel)]="newOnomatopoeia" type="text" name="word" id="word">
+    </fieldset>
+    <button type="submit">Envoyer</button>
+</form>
