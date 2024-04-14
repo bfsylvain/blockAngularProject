@@ -15,6 +15,14 @@ export class AppComponent {
   ///////////////////// QUEST /////////////////////////
   isAdmin: boolean = false;
   playlist: string[] = ["Alejandro", "Ne me quitte pas", "Le temps est bon"];
+  
+  onOnomatopeiaList: string[]= [];
+
+  onReceiveNewOnomatopeia(event: string): void {
+    this.onOnomatopeiaList.push(event)
+    console.log(event)
+  }
+
   ToggleIsAdmin() {
     this.isAdmin = !this.isAdmin
   }
