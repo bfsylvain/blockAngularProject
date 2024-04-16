@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
+import { cocktailService } from './cocktail.service';
 
 @Component({
   selector: 'app-root',
@@ -17,6 +18,11 @@ export class AppComponent {
   playlist: string[] = ["Alejandro", "Ne me quitte pas", "Le temps est bon"];
   
   onOnomatopeiaList: string[]= [];
+  constructor(private cocktailService: cocktailService){}
+  onClick(){
+    console.log(this.cocktailService.helloWorld())
+  }
+  
 
   onReceiveNewOnomatopeia(event: string): void {
     this.onOnomatopeiaList.push(event)

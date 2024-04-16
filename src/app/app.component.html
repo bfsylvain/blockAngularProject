@@ -19,6 +19,7 @@
   <ul>
     <li *ngFor="let _ of [].constructor(20); let catNumber=index"> Cat number {{ catNumber + 1 }} 🐱</li>
   </ul>
+  <app-cocktail-list-component></app-cocktail-list-component>
   <p>Onomato list :</p>
   <ul>
     <li *ngFor="let onomato of onOnomatopeiaList">{{ onomato }}</li>
@@ -29,5 +30,6 @@
 
   <app-sign-up></app-sign-up>
   <app-developer></app-developer>
+  <app-cocktail-list-component></app-cocktail-list-component>
 </main>
 <router-outlet></router-outlet>

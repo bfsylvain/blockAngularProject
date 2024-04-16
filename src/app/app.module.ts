@@ -10,6 +10,8 @@ import { SignUpComponent } from './sign-up/sign-up.component';
 import { DeveloperComponent } from './developer/developer.component';
 import { SkillsComponent } from './skills/skills.component';
 import { CreateOnomatopoeiaComponentComponent } from './create-onomatopoeia-component/create-onomatopoeia-component.component';
+import { CocktailListComponentComponent } from './cocktail-list-component/cocktail-list-component.component';
+import { CocktailCardComponent } from './cocktail-card/cocktail-card.component';
 
 @NgModule({
   declarations: [
@@ -20,6 +22,8 @@ import { CreateOnomatopoeiaComponentComponent } from './create-onomatopoeia-comp
     DeveloperComponent,
     SkillsComponent,
     CreateOnomatopoeiaComponentComponent,
+    CocktailListComponentComponent,
+    CocktailCardComponent,
   ],
   imports: [
     BrowserModule,
