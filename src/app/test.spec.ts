@@ -5,6 +5,7 @@ import { CocktailListComponentComponent } from './cocktail-list-component/cockta
 import { cocktailService } from './cocktail.service';
 
 import { HttpClientModule } from '@angular/common/http';
+import { CocktailCardComponent } from './cocktail-card/cocktail-card.component';
 
 
 
@@ -13,14 +14,16 @@ describe('CocktailListComponent', () => {
   let component: CocktailListComponentComponent;
 
   let fixture: ComponentFixture<CocktailListComponentComponent>;
+  let fixture2: ComponentFixture<CocktailCardComponent>;
 
 
   beforeEach(async () => {
 
     await TestBed.configureTestingModule({
 
-      imports: [HttpClientModule, CocktailListComponentComponent]
-
+      imports: [HttpClientModule],
+      declarations: [CocktailListComponentComponent, CocktailCardComponent],
+      providers: [cocktailService]
     })
 
     .compileComponents();
@@ -28,6 +31,7 @@ describe('CocktailListComponent', () => {
     
 
     fixture = TestBed.createComponent(CocktailListComponentComponent);
+    fixture2 = TestBed.createComponent(CocktailCardComponent);
 
     component = fixture.componentInstance;
 
