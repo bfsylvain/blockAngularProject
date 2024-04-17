@@ -1,5 +1,6 @@
-import { Component, inject } from '@angular/core';
+import { Component } from '@angular/core';
 import { cocktailService } from './cocktail.service';
+import { NewUser } from './models/types/newUser';
 
 @Component({
   selector: 'app-root',
@@ -17,19 +18,26 @@ export class AppComponent {
   isAdmin: boolean = false;
   playlist: string[] = ["Alejandro", "Ne me quitte pas", "Le temps est bon"];
   
-  onOnomatopeiaList: string[]= [];
+  // onOnomatopeiaList: string[]= [];
+  UserList: NewUser[] = [];
   constructor(private cocktailService: cocktailService){}
   onClick(){
     console.log(this.cocktailService.helloWorld())
   }
-  
-
-  onReceiveNewOnomatopeia(event: string): void {
-    this.onOnomatopeiaList.push(event)
-    console.log(event)
-  }
-
   ToggleIsAdmin() {
     this.isAdmin = !this.isAdmin
   }
+  
+
+  // onReceiveNewOnomatopeia(event: string): void {
+  //   this.onOnomatopeiaList.push(event)
+  //   console.log(event)
+  // }
+
+  onReceiveUser(event: NewUser): void {
+    this.UserList.push(event)
+    console.log(event)
+
+  }
+
 }

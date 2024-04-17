@@ -1,5 +1,5 @@
-import { Component } from '@angular/core';
-import { FormControl, FormGroup } from '@angular/forms';
+import { Component, EventEmitter, Output } from '@angular/core';
+import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
 import { NewUser } from '../models/types/newUser';
 
 @Component({
@@ -8,22 +8,33 @@ import { NewUser } from '../models/types/newUser';
   styleUrl: './user-creation-form.component.scss',
 })
 export class UserCreationFormComponent {
+
   user: NewUser = {
-    name:"",
-    email:"",
-    password:"",
-    address:""
+    name: '',
+    email: '',
+    password: '',
+    address: '',
   };
-  form: FormGroup = new FormGroup({
+  userForm = this.fb.group({
     name: new FormControl(''),
     email: new FormControl(''),
     password: new FormControl(''),
-    addressNumber: new FormControl(''),
-    address: new FormControl(''),
-    zipCode: new FormControl(''),
+    // address: new FormControl(''),
+    addressGroup: this.fb.group({ /////////////address AVEC 2 points pas de =
+      streetNumber: new FormControl(0),
+      streetName: new FormControl(''),
+      zipCode: new FormControl(0),
+      city: new FormControl('')      
+    })
   });
 
-  onClick() {
-    const formData = this.form.value;
+  @Output() sendUserToParent: EventEmitter<NewUser> = new EventEmitter();
+
+  constructor(private fb: FormBuilder) {}
+
+  onSubmit() {
+    // this.user = this.form.value;
+    console.log(this.userForm.value);
+    // this.sendUserToParent.emit(this.user);
   }
 }
