@@ -13,6 +13,7 @@ import { CreateOnomatopoeiaComponentComponent } from './create-onomatopoeia-comp
 import { CocktailListComponentComponent } from './cocktail-list-component/cocktail-list-component.component';
 import { CocktailCardComponent } from './cocktail-card/cocktail-card.component';
 import { UserCreationFormComponent } from './user-creation-form/user-creation-form.component';
+import { AddressPipe } from './address.pipe';
 
 @NgModule({
   declarations: [
@@ -26,6 +27,7 @@ import { UserCreationFormComponent } from './user-creation-form/user-creation-fo
     CocktailListComponentComponent,
     CocktailCardComponent,
     UserCreationFormComponent,
+    AddressPipe,
   ],
   imports: [
     BrowserModule,
