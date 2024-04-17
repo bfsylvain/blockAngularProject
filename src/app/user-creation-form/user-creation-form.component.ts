@@ -1,7 +1,9 @@
 import { Component, EventEmitter, Output } from '@angular/core';
-import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { Address } from '../models/classes/address.class';
 import { NextUser } from '../models/classes/nextUser.class';
+import { passwordValidator } from '../models/validators/password.validator';
+import { emailValidator } from '../models/validators/email.validators';
 
 @Component({
   selector: 'app-user-creation-form',
@@ -12,10 +14,10 @@ export class UserCreationFormComponent {
   address!: Address;
 
   userForm: FormGroup = this.fb.group({
-    name: new FormControl(''),
+    name: new FormControl('', [Validators.required, Validators.minLength(4)]),
     credentials: this.fb.group({
-      email: new FormControl(''),
-      password: new FormControl(''),
+      email: new FormControl('', [Validators.required, emailValidator]),
+      password: new FormControl('', [Validators.required, passwordValidator]),
     }),
     addressGroup: this.fb.group({
       /////////////addressGroup AVEC 2 points pas de =

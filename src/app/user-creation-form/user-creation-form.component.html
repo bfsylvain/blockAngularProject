@@ -1,34 +1,59 @@
 <form [formGroup]="userForm" (ngSubmit)="onSubmit()">
+  <fieldset>
+    <div
+      *ngIf="
+        userForm.controls['name'].errors && !userForm.controls['name'].pristine
+      "
+    >
+      <div [hidden]="!userForm.controls['name'].errors['required']">
+        c'est requis
+      </div>
+      <div [hidden]="!userForm.controls['name'].invalid">
+        username is invalid.
+      </div>
+    </div>
+    <label for="">Nom</label>
+    <input type="text" formControlName="name" />
+  </fieldset>
+  <div formGroupName="credentials">
     <fieldset>
-        <label for="">Nom</label>
-        <input type="text" formControlName="name" required/>
-    </fieldset>
-    <div formGroupName="credentials">
-    <fieldset>
+        <div *ngIf="userForm.get('credentials.email')?.errors && !userForm.get('credentials.email')?.pristine">
+        <div [hidden]="!userForm.get('credentials.email')?.errors?.['required']">Email nécessaire</div>
+        <div [hidden]="!userForm.get('credentials.email')?.invalid">L'email est invalide : {{userForm.get('credentials.email')?.errors?.['email'].rules}}</div>
+    </div>
       <label for="">Email</label>
-      <input type="text" formControlName="email" required/>
+      <input type="text" formControlName="email" />
     </fieldset>
     <fieldset>
+    <div *ngIf="userForm.get('credentials.password')?.errors && !userForm.get('credentials.password')?.pristine">
+        <div [hidden]="!userForm.get('credentials.password')?.errors?.['required']" >
+        mot de passe obligatoire
+        </div>
+        <div [hidden]="!userForm.get('credentials.password')?.invalid">
+        password is invalid: {{userForm.get("credentials.password")?.errors?.['password'].rules}}
+        
+        </div>
+    </div>
       <label for="">Mot de passe</label>
-      <input type="text" formControlName="password" required/>
+      <input type="text" formControlName="password" required />
     </fieldset>
   </div>
   <div formGroupName="addressGroup">
     <fieldset>
       <label for="">N°</label>
-      <input type="number" formControlName="streetNumber" required/>
+      <input type="number" formControlName="streetNumber" required />
     </fieldset>
     <fieldset>
       <label for="">Rue</label>
-      <input type="text" formControlName="streetName" required/>
+      <input type="text" formControlName="streetName" required />
     </fieldset>
     <fieldset>
       <label for="">Code postal</label>
-      <input type="text" formControlName="zipCode" required/>
+      <input type="text" formControlName="zipCode" required />
     </fieldset>
     <fieldset>
       <label for="">Ville</label>
-      <input type="text" formControlName="city" required/>
+      <input type="text" formControlName="city" required />
     </fieldset>
   </div>
   <!-- </form> -->
