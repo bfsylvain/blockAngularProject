@@ -1,3 +1,20 @@
 <form [formGroup]="form">
-    
+    <fieldset>
+        <label for="">Nom</label>
+        <input type="text" formControlName="name">
+    </fieldset>
+    <fieldset>
+        <label for="">Email</label>
+        <input type="text" formControlName="email">
+    </fieldset>
+    <fieldset>
+        <label for="">Mot de passe</label>
+        <input type="text" formControlName="password">
+    </fieldset>
+    <fieldset>
+        <label for="">Adresse</label>
+        <input type="number" formControlName="addressNumber">
+        <input type="text" formControlName="address">
+        <input type="text" formControlName="zipCode">
+    </fieldset>
 </form>
