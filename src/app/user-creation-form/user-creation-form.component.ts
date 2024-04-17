@@ -18,6 +18,7 @@ export class UserCreationFormComponent {
       password: new FormControl(''),
     }),
     addressGroup: this.fb.group({
+      /////////////addressGroup AVEC 2 points pas de =
       streetNumber: new FormControl(0),
       streetName: new FormControl(''),
       zipCode: new FormControl(0),
