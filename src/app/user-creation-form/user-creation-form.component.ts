@@ -1,6 +1,5 @@
 import { Component, EventEmitter, Output } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
-import { NewUser } from '../models/types/newUser';
 import { Address } from '../models/classes/address.class';
 import { NextUser } from '../models/classes/nextUser.class';
 
@@ -14,11 +13,11 @@ export class UserCreationFormComponent {
 
   userForm: FormGroup = this.fb.group({
     name: new FormControl(''),
-    email: new FormControl(''),
-    password: new FormControl(''),
-    // address: new FormControl(''),
+    credentials: this.fb.group({
+      email: new FormControl(''),
+      password: new FormControl(''),
+    }),
     addressGroup: this.fb.group({
-      /////////////address AVEC 2 points pas de =
       streetNumber: new FormControl(0),
       streetName: new FormControl(''),
       zipCode: new FormControl(0),
@@ -31,14 +30,13 @@ export class UserCreationFormComponent {
   constructor(private fb: FormBuilder) {}
 
   onSubmit() {
-    // this.user = this.form.value;
+    console.log(this.userForm.value)
     const user: NextUser = new NextUser(
       this.userForm.getRawValue().name,
-      this.userForm.getRawValue().email,
-      this.userForm.getRawValue().password,
+      this.userForm.getRawValue().credentials.email,
+      this.userForm.getRawValue().credentials.password,
       this.userForm.getRawValue().addressGroup
     );
-    console.log(typeof this.userForm.value);
     this.sendUserToParent.emit(user);
   }
 }

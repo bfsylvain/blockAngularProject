@@ -1,34 +1,35 @@
 <form [formGroup]="userForm" (ngSubmit)="onSubmit()">
-  <fieldset>
-    <label for="">Nom</label>
-    <input type="text" formControlName="name" />
-  </fieldset>
-  <fieldset>
-    <label for="">Email</label>
-    <input type="text" formControlName="email" />
-  </fieldset>
-  <fieldset>
-    <label for="">Mot de passe</label>
-    <input type="text" formControlName="password" />
-  </fieldset>
+    <fieldset>
+        <label for="">Nom</label>
+        <input type="text" formControlName="name" required/>
+    </fieldset>
+    <div formGroupName="credentials">
+    <fieldset>
+      <label for="">Email</label>
+      <input type="text" formControlName="email" required/>
+    </fieldset>
+    <fieldset>
+      <label for="">Mot de passe</label>
+      <input type="text" formControlName="password" required/>
+    </fieldset>
+  </div>
   <div formGroupName="addressGroup">
     <fieldset>
       <label for="">N°</label>
-      <input type="number" formControlName="streetNumber" />
+      <input type="number" formControlName="streetNumber" required/>
     </fieldset>
     <fieldset>
-        <label for="">Rue</label>
-        <input type="text" formControlName="streetName" />
-      </fieldset>
-      <fieldset>
-        <label for="">Code postal</label>
-        <input type="text" formControlName="zipCode" />
-      </fieldset>
-      <fieldset>
-        <label for="">Ville</label>
-        <input type="text" formControlName="city" />
-      </fieldset>
-      
+      <label for="">Rue</label>
+      <input type="text" formControlName="streetName" required/>
+    </fieldset>
+    <fieldset>
+      <label for="">Code postal</label>
+      <input type="text" formControlName="zipCode" required/>
+    </fieldset>
+    <fieldset>
+      <label for="">Ville</label>
+      <input type="text" formControlName="city" required/>
+    </fieldset>
   </div>
   <!-- </form> -->
   <button type="submit" [disabled]="!userForm.valid">submit</button>
