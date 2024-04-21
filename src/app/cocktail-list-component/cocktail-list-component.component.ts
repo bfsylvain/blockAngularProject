@@ -8,18 +8,14 @@ import { cocktailService } from '../cocktail.service';
   styleUrl: './cocktail-list-component.component.scss'
 })
 export class CocktailListComponentComponent {
+
   cocktailList: Cocktail[]=[]
 
   constructor(private cocktailService: cocktailService){}
   
   ngOnInit(): void {
-    // this.getCocktailList()
-    // console.log(this.cocktailList)
-    this.cocktailService.getCocktailListFromUrl().subscribe(list => { 
-      this.cocktailList = list})
-  }
 
-  getCocktailList(): void {
-    this.cocktailList = this.cocktailService.getCocktails()
+    this.cocktailService.getCocktailList().subscribe(list => { 
+      this.cocktailList = list})
   }
 }

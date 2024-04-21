@@ -20,7 +20,7 @@ export class cocktailService {
     return cocktailList
   }
 
-  getCocktailListFromUrl(): Observable<Cocktail[]> {
+  getCocktailList(): Observable<Cocktail[]> {
     return this.httpService.get<Cocktail[]>(this._cocktailsUrl)
   }
 }
