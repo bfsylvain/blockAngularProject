@@ -13,8 +13,10 @@ export class CocktailListComponentComponent {
   constructor(private cocktailService: cocktailService){}
   
   ngOnInit(): void {
-    this.getCocktailList()
-    console.log(this.cocktailList)
+    // this.getCocktailList()
+    // console.log(this.cocktailList)
+    this.cocktailService.getCocktailListFromUrl().subscribe(list => { 
+      this.cocktailList = list})
   }
 
   getCocktailList(): void {

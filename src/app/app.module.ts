@@ -14,6 +14,7 @@ import { CocktailListComponentComponent } from './cocktail-list-component/cockta
 import { CocktailCardComponent } from './cocktail-card/cocktail-card.component';
 import { UserCreationFormComponent } from './user-creation-form/user-creation-form.component';
 import { AddressPipe } from './address.pipe';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -33,7 +34,8 @@ import { AddressPipe } from './address.pipe';
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
